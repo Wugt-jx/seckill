@@ -1,9 +1,14 @@
 server:
   port: 8080
-  context-path: /girl
+  context-path: /seckill
 spring:
   datasource:
     driver-class-name: com.mysql.jdbc.Driver
     url: jdbc:mysql://localhost:3306/seckill
     username: root
     password: root
+  http:
+      encoding:
+        charset: utf-8
+        enabled: true
+        force: true

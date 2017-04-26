@@ -15,7 +15,7 @@ public class Seckill implements Serializable{
     private Integer number;
     private Date startTime;
     private Date endTime;
-    private Date cteateTime;
+    private Date createTime;
 
     public Seckill() {
     }
@@ -60,12 +60,12 @@ public class Seckill implements Serializable{
         this.endTime = endTime;
     }
 
-    public Date getCteateTime() {
-        return cteateTime;
+    public Date getCreateTime() {
+        return createTime;
     }
 
-    public void setCteateTime(Date cteateTime) {
-        this.cteateTime = cteateTime;
+    public void setCreateTime(Date createTime) {
+        this.createTime = createTime;
     }
 
     @Override
@@ -76,7 +76,7 @@ public class Seckill implements Serializable{
                 ", number=" + number +
                 ", startTime=" + startTime +
                 ", endTime=" + endTime +
-                ", cteateTime=" + cteateTime +
+                ", createTime=" + createTime +
                 '}';
     }
 }
