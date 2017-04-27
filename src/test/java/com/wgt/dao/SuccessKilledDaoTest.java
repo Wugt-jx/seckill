@@ -28,7 +28,7 @@ public class SuccessKilledDaoTest {
 
     @Test
     public void queryBuIdWithSeckill() throws Exception {
-        SuccessKilled seckill=mapper.queryBuIdWithSeckill(1001);
+        SuccessKilled seckill=mapper.queryByIdWithSeckill(1001,1274463432);
         System.out.println(seckill);
     }
 

@@ -22,17 +22,18 @@ public interface SuccessKilledDao {
 
     /**
      * 根据id查询SuccessKilled并携带秒杀产品对象实体
-     * @param seckill
+     * @param seckillId
      * @return
      */
     @Select("select sk.seckill_id,sk.user_phone,sk.create_time,sk.state," +
             "s.seckill_id,s.name,s.number,s.start_time,s.end_time,s.create_time " +
             "from success_killed sk inner join seckill s on sk.seckill_id = s.seckill_id " +
-            "where sk.seckill_id =#{seckillId}")
+            "where sk.seckill_id =#{seckillId} and sk.user_phone=#{userPhone}")
     @Results({
-            @Result(property = "seckillId",column ="sk.seckill_id"),
-            @Result(property = "userPhone",column = "sk.user_phone"),
-            @Result(property = "create_time",column = "sk.create_time"),
+            @Result(property = "seckill",column ="seckill_id",one = @One(select = "com.wgt.dao.SeckillDao.queryById")),
+            @Result(property = "userPhone",column = "user_phone"),
+            @Result(property = "createTime",column = "create_time"),
+            @Result(property = "seckillId",column = "seckill_id")
     })
-    SuccessKilled queryBuIdWithSeckill(@Param("seckill") long seckillId);
+    SuccessKilled queryByIdWithSeckill(@Param("seckillId") long seckillId,@Param("userPhone") long userPhone);
 }

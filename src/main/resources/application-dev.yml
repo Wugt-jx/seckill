@@ -12,3 +12,9 @@ spring:
         charset: utf-8
         enabled: true
         force: true
+  thymeleaf:
+    prefix: classpath:/templates/
+    suffix: .html
+logging:
+  level:
+    com.wgt: debug
